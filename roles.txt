@@ -2,6 +2,7 @@ Ildar
   user/profile.erb    .scss   .rb 
   user/settings.erb   .scss   .rb
   user/delete_confirm.erb   .scss   .rb
+  roles.txt
 
 
 
