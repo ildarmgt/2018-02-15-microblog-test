@@ -1,4 +1,4 @@
 get '/people' do
 
-    erb :people
+    erb :recent_people
 end

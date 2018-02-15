@@ -1,4 +1,4 @@
 get '/blogs' do
 
-    erb :blogs
+    erb :recent_blogs
 end
