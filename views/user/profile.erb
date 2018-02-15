@@ -1,4 +1,25 @@
+<!-- The personal page of the user in the URL -->
+<!-- If logged in, should show controlling options -->
 <div class="main-profile">
+  
+  
+  
+  <% if @session_user_ishomepage %>
+    <!-- this prints if this is home page of logged in user -->
+
+
+    Owner visiting his page
+  <% elsif @this_page_user_isreal %>
+    <!-- this prints if this is a visiting page -->
+
+    Visiting page
+  <% else %>
+    <!-- this prings if page doesn't exist -->
+
+    This user doesn't exist
+  <% end %>
+
+  
   <h1>Personal page based on URL</h1>
   <h2>ability to write new blogs for owner here</h2>
   <h2>list of blogs here</h2>
