@@ -2,5 +2,5 @@
 get '/user/delete' do 
 
 
-  erb :'user/profile'
+  erb :'user/delete'
 end
