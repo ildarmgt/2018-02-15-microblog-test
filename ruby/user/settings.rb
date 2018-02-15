@@ -2,5 +2,5 @@
 get '/user/settings' do 
 
 
-  erb :'user/profile'
+  erb :'user/settings'
 end
