@@ -7,7 +7,6 @@
   </head>
   <body>
 
-
     <form action="/user_login" method="post">
       <input type="text" name="username" placeholder="Username:">
       <input type="text" name="password" placeholder="Password:">
@@ -19,15 +18,28 @@
       <%= yield %>
     </div>
 
-
     <nav>
-      <div class=""><a href='/'>landing</a></div>
-      <div class=""><a href='/user/1/profile'>profile</a></div>
-      <div class=""><a href='/user/settings'>settings</a></div>
-      <div class=""><a href='/user/signup'>signup</a></div>
-      <div class=""><a href='/user/delete_confirm'>delete</a></div>
-      <div class=""><a href='/blogs'>recent blogs</a></div>
-      <div class=""><a href='/people'>recent people</a></div>
+      <div class="">
+        <a href='/'>landing</a>
+      </div>
+      <div class="">
+        <a href='/user/1/profile'>profile</a>
+      </div>
+      <div class="">
+        <a href='/user/settings'>settings</a>
+      </div>
+      <div class="">
+        <a href='/user/signup'>signup</a>
+      </div>
+      <div class="">
+        <a href='/user/delete_confirm'>delete</a>
+      </div>
+      <div class="">
+        <a href='/blogs'>recent blogs</a>
+      </div>
+      <div class="">
+        <a href='/people'>recent people</a>
+      </div>
     </nav>
 
   </body>
