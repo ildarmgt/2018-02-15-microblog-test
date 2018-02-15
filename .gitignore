@@ -1,0 +1,5 @@
+public/.sass-cache/
+public/css/
+Gemfile.lock
+main.sqlite3
+instructions.txt

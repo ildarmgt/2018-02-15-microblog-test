@@ -1,0 +1,20 @@
+Ildar
+  user/profile.erb    .scss   .rb 
+  user/settings.erb   .scss   .rb
+  user/delete_confirm.erb   .scss   .rb
+
+
+
+Angel
+  recent_blogs.erb    .scss   .rb
+  recent_people.erb   .scss   .rb
+  user/signup.erb     .scss   .rb
+
+
+
+Rodrigo
+  landing.erb   _landing.scss   _landing.rb
+  layout.erb    _layout.scss    _layout.rb
+  
+
+  
