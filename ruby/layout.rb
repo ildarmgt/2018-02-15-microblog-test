@@ -4,7 +4,7 @@ get '/user/:page_user_id/profile' do
 end
 
 
-post '/user_login' do
+post '/user_logging_' do
   username = params[:username]
   password = params[:password]
   # stores the username and password from the form
@@ -20,20 +20,22 @@ post '/user_login' do
       session[:current_user_id] = stored_user.id
       # stores the user id while logged in
 
-      puts "***********************"
-      puts "Logged in"
-      puts "***********************"
-
       redirect '/user/' + session[:current_user_id].to_s + '/profile'
     else
       # if wrong password, redirects you to home page
 
-      redirect '/?logonfail=' +  CGI.escape("Wrong")
+      redirect '/?notice_id_wrong=' +  CGI.escape("3")
     end
 
   else
     # if user does not exist, redirects you to the home pages
 
-    redirect '/?logonfail=' + CGI.escape("Wrong")
+    redirect '/?notice_id_wrong=' + CGI.escape("3")
   end
+end
+
+# Allows the user to log out and clears the session id
+post '/logging_out' do
+  session[:current_user_id] = nil
+  redirect '/?notice_id=2'
 end
