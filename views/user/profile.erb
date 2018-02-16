@@ -1,16 +1,29 @@
 <!-- The personal page of the user in the URL -->
 <!-- If logged in, should show controlling options -->
-<div class="main-profile">
+<div class="main__profile">
   
   
   
   <% if @session_user_ishomepage %>
     <!-- this prints if this is home page of logged in user -->
 
-
+    <!-- this is the new blog post form -->
+    <div class="main__profile__new">
+      <form method="POST" action="/posting_blog">
+        <textarea name="main__profile__new__content" placeholder="new blog"></textarea>
+        <input type="submit" value="post">
+      </form>
+    </div>
+  
+    <!-- https://stackoverflow.com/questions/3332449/rails-multi-submit-buttons-in-one-form -->
+    
+    
     Owner visiting his page
-  <% elsif @this_page_user_isreal %>
+  
+  
+    <% elsif @this_page_user_isreal %>
     <!-- this prints if this is a visiting page -->
+
 
     Visiting page
   <% else %>
@@ -18,8 +31,36 @@
 
     This user doesn't exist
   <% end %>
-
   
+  <!-- general list of posts -->
+  <% if @this_page_user_isreal %>
+    <% @this_page_user.blogs.each do |ea_post| %> 
+        <div class="main__profile__history">
+          <form method="POST" action="/user/post/action/<%= ea_post.id %>/">
+            <div>
+              <%= ea_post.date %> / 
+              <a href="/user/<%= ea_post.user_id %>/profile">
+                <%= User.find_by(id: ea_post.user_id).username %>
+              </a>
+            </div>
+            <textarea name="main__profile__history__content" maxlength=149><%= ea_post.content %></textarea>
+            <br>
+            <% if ea_post.user_id == @session_user.id %>
+              <div class="main__profile__history__content_edit">
+                Allow edit
+              </div>
+              <div class="main__profile__history__content_delete">
+                Start delete
+              </div>
+              <input type="submit" value="edit" name="btn_edit">
+              <input type="submit" value="delete" name="btn_delete">
+            <% end %>
+          </form>
+          
+        </div>
+    <% end %>
+  <% end %>
+
   <h1>Personal page based on URL</h1>
   <h2>ability to write new blogs for owner here</h2>
   <h2>list of blogs here</h2>
