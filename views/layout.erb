@@ -7,11 +7,41 @@
   </head>
   <body>
 
-    <form action="/user_login" method="post">
-      <input type="text" name="username" placeholder="Username:">
-      <input type="text" name="password" placeholder="Password:">
-      <input type="submit" name="Log In">
-    </form>
+    <div class="">
+
+      <nav>
+        <div class="">
+          <a href='/'>Home</a>
+        </div>
+        <div class="">
+          <a href='/blogs'>Blogs</a>
+        </div>
+        <div class="">
+          <a href='/people'>People</a>
+        </div>
+      </nav>
+
+      <div class="">
+        <%= @notice %>
+      </div>
+
+      <div class="">
+        <%= @notice_wrong %>
+      </div>
+
+      <form action="/user_logging_in" method="post">
+        <input type="text" name="username" placeholder="Username:">
+        <input type="text" name="password" placeholder="Password:">
+        <input type="submit" value="Log In">
+      </form>
+
+      <div class="layout-logout">
+        <form action='/logging_out' method='post'>
+          <input type="submit" value="Logout">
+        </form>
+      </div>
+    </div>
+
 
 
     <div class="main">
