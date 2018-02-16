@@ -1,6 +1,4 @@
-document.addEventListener("click", function(){
-var button = document.getElementById("button");
-});// With help from The Art of The Web: http://www.the-art-of-web.com/javascript/validate-password/#box1
+// With help from The Art of The Web: http://www.the-art-of-web.com/javascript/validate-password/#box1
 
 function checkForm(form) {
     if (form.username.value == "") {
