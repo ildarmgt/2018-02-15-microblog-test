@@ -4,7 +4,7 @@ get '/user/:page_user_id/profile' do
 end
 
 
-post '/user_logging_' do
+post '/user_logging_in' do
   username = params[:username]
   password = params[:password]
   # stores the username and password from the form
