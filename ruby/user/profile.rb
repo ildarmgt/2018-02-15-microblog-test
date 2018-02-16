@@ -2,7 +2,7 @@
 # to link for user_id #4 have to use /user/4/profile
 get '/user/:user_id/profile' do
   # REMOVE REMOVE REMOVE *******************
-    session[:current_user_id] = 1
+    # session[:current_user_id] = 1
   # REMOVE REMOVE REMOVE *******************
 
   ###  page data
@@ -105,11 +105,6 @@ post '/posting_blog' do
   # can only post if you are logged in
   if isLoggedIn
     # if logged in, create blog
-    puts "**********************************"
-      p params[:main__profile__new__content]
-      puts params[:main__profile__new__content]
-      puts params[:main__profile__new__content].inspect
-    puts "**********************************"
 
     Blog.create(
       date: Time.new.strftime("%Y %b %d, %H:%M"),
