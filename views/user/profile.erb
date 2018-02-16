@@ -1,12 +1,11 @@
 <!-- The personal page of the user in the URL -->
 <!-- If logged in, should show controlling options -->
 <div class="main__profile">
-  
-  
-  
   <% if @session_user_ishomepage %>
     <!-- this prints if this is home page of logged in user -->
-
+    <div class="main__profile__welcome">
+      Your home page
+    </div>
     <!-- this is the new blog post form -->
     <div class="main__profile__new">
       <form method="POST" action="/posting_blog">
@@ -16,16 +15,12 @@
     </div>
   
     <!-- https://stackoverflow.com/questions/3332449/rails-multi-submit-buttons-in-one-form -->
-    
-    
-    Owner visiting his page
-  
-  
-    <% elsif @this_page_user_isreal %>
+  <% elsif @this_page_user_isreal %>
     <!-- this prints if this is a visiting page -->
+    <div class="main__profile__welcome">
+      Your home page
+    </div>
 
-
-    Visiting page
   <% else %>
     <!-- this prings if page doesn't exist -->
 
@@ -60,9 +55,5 @@
         </div>
     <% end %>
   <% end %>
-
-  <h1>Personal page based on URL</h1>
-  <h2>ability to write new blogs for owner here</h2>
-  <h2>list of blogs here</h2>
 
 </div>
