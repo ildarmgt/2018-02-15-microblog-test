@@ -15,6 +15,7 @@ get '/blogs' do
   end
 
   # page logic goes here
+  
 
   erb :recent_blogs
 end

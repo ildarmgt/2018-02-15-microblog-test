@@ -1,1 +1,35 @@
-<h1>Blog Feed</h1>
+<div class="blogs">
+  <div class="blogs-title">
+    <h1>Recent Blogs</h1>
+  </div>
+
+  <!-- general list of posts -->
+    
+  <% Blog.all.reverse[0..9].each do |ea_post| %> 
+    <div class="blog__history">
+      <form method="POST" action="/user/post/action/<%= ea_post.id %>/">
+        <div>
+          <%= ea_post.date %> / 
+          <a href="/user/<%= ea_post.user_id %>/profile">
+            <%= User.find_by(id: ea_post.user_id).username %>
+          </a>
+        </div>
+        <textarea name="blog__profile__history__content" maxlength=149><%= ea_post.content %></textarea>
+        <br>
+        <% if !! @session_user %>
+          <% if ea_post.user_id == @session_user.id %>
+            <div class="blog__profile__history__content_edit">
+              Allow edit
+            </div>
+            <div class="blog__profile__history__content_delete">
+              Start delete
+            </div>
+            <input type="submit" value="edit" name="btn_edit">
+            <input type="submit" value="delete" name="btn_delete">
+          <% end %>
+        <% end %>
+      </form>        
+    </div>
+  <% end %>
+
+</div>

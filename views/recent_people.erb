@@ -1,2 +1,20 @@
-<h1>People List</h1>
+<div class="people">
+  <div class="people-title">
+    <h1>List of users</h1>
+  </div>
 
+  <!-- general list of posts -->
+  <div class="people__list">
+
+    <% User.all.reverse.each do |ea_person| %> 
+      <div class="people__list_item">      
+        
+        <a href="/user/<%= ea_person.id %>/profile">
+          <%= ea_person.username %>
+        </a>
+                
+      </div>
+    <% end %>
+
+  </div>
+</div>
