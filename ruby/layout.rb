@@ -1,12 +1,3 @@
-get '/user/:page_user_id/profile' do
-  @user = User.find(params[:id])
-  session_user_id = (session[:user_id]).to_i
-  @session_user = User.find_by(id: session_user_id)
-
-  erb :'/user/profile'
-end
-
-
 post '/user_logging_in' do
   username = params[:username]
   password = params[:password]
