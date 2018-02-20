@@ -12,13 +12,13 @@
       <% if !! @session_user %>
 
         
-        <div class="layout-change_pages">
+        <div class="layout-change_pages" style="margin: 1vh;">
           <a href='/'><%= @session_user.username %></a>
         </div>
-        <div class="layout-change_pages">
+        <div class="layout-change_pages" style="margin: 1vh;">
           <a href='/blogs'>Blogs</a>
         </div>
-        <div class="layout-change_pages">
+        <div class="layout-change_pages" style="margin: 1vh;">
           <a href='/people'>People</a>
         </div>
         
@@ -39,13 +39,13 @@
       <% else %>
 
       
-      <div class="layout-change_pages" style="vertical-align: top">
+      <div class="layout-change_pages" style="vertical-align: top; margin: 1vh;">
         <a href='/'>Home</a>
       </div>
-      <div class="layout-change_pages" style="vertical-align: top">
+      <div class="layout-change_pages" style="vertical-align: top; margin: 1vh;">
         <a href='/blogs'>Blogs</a>
       </div>
-      <div class="layout-change_pages" style="vertical-align: top">
+      <div class="layout-change_pages" style="vertical-align: top; margin: 1vh;">
         <a href='/people'>People</a>
       </div>
       
@@ -55,10 +55,10 @@
           <input type="text" name="username" placeholder="Username:">
           <input type="password" name="password" placeholder="Password:">
           <input type="submit" value="Log In">
-          <div>
+          <div style="color: green">
             <%= @notice %>
           </div>
-          <div>
+          <div style="color: red">
             <%= @notice_wrong %>
           </div>
         </form>
