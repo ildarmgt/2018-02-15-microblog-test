@@ -1,10 +1,9 @@
-FORM_CREATE = document.getElementsByClassName('form_create_user')[0];
+var FORM_CREATE = document.getElementsByClassName('form_create_user')[0];
+var BTN_CREATE_SUBMIT = document.getElementsByClassName('form_create_user__submit')[0];
+var TXT_CREATE_PASS1 = document.getElementsByClassName('form_create_user__pass1')[0];
+var TXT_CREATE_PASS2 = document.getElementsByClassName('form_create_user__pass2')[0];
+var LBL_CREATE_ERROR = document.getElementsByClassName('form_create_user__error')[0];
 
-BTN_CREATE_SUBMIT = document.getElementsByClassName('form_create_user__submit')[0];
-
-TXT_CREATE_PASS1 = document.getElementsByClassName('form_create_user__pass1')[0];
-TXT_CREATE_PASS2 = document.getElementsByClassName('form_create_user__pass2')[0];
-LBL_CREATE_ERROR = document.getElementsByClassName('form_create_user__error')[0];
 BTN_CREATE_SUBMIT.addEventListener('click', submit_on_click);
 
 function submit_on_click () {

@@ -4,13 +4,11 @@
 
 // need to put in a js submit button that checks the above 2
 
-FORM_CREATE = document.getElementsByClassName('main-setting-form')[0];
-
-BTN_CREATE_SUBMIT = document.getElementsByClassName('main-settings-apply')[0];
-
-TXT_CREATE_PASS1 = document.getElementsByClassName('main-setting-pass1')[0];
-TXT_CREATE_PASS2 = document.getElementsByClassName('main-setting-pass2')[0];
-LBL_CREATE_ERROR = document.getElementsByClassName('main-settings-error')[0];
+var FORM_CREATE = document.getElementsByClassName('main-setting-form')[0];
+var BTN_CREATE_SUBMIT = document.getElementsByClassName('main-settings-apply')[0];
+var TXT_CREATE_PASS1 = document.getElementsByClassName('main-setting-pass1')[0];
+var TXT_CREATE_PASS2 = document.getElementsByClassName('main-setting-pass2')[0];
+var LBL_CREATE_ERROR = document.getElementsByClassName('main-settings-error')[0];
 
 BTN_CREATE_SUBMIT.addEventListener('click', submit_on_click);
 
