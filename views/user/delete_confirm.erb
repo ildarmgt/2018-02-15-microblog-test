@@ -1,5 +1,10 @@
 <div class="main-delete">
-  <h1>Delete confirm page</h1>
-  <h2>ok or cancel</h2>
+  <h1>Are you sure you want to delete your account?</h1>
+  <br>
+
+  <form action="/deleting_account" method="POST">
+    <input type="submit" value="Delete" name="main__delete_confirm">
+    <input type="submit" value="Do NOT delete" name="main__delete_cancel">
+  </form>
 
 </div>
