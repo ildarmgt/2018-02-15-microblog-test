@@ -21,11 +21,11 @@ function submit_on_click () {
   // check if at least one number
   let re = /[0-9]/;
   if (!re.test(TXT_CREATE_PASS1.value)) {
-    isPass = false;
+    let isPass = false;
     LBL_CREATE_ERROR.innerHTML = 'Password must contain at least one number (0-9)!';
     TXT_CREATE_PASS1.focus();
   } else {
-    isPass = true;
+    let isPass = true;
   }
 
   // submit form if both tests pass
