@@ -1,5 +1,5 @@
 # show editing settings page for logged in user
-get '/user/settings' do 
+get '/user/settings' do
 
   # grab id of the user signed in
   if !! session[:current_user_id]
@@ -66,4 +66,5 @@ post '/editing_account' do
 
   # send back to landing
   redirect '/editing_account'
+
 end
