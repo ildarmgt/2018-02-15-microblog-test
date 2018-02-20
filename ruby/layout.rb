@@ -1,5 +1,8 @@
 get '/user/:page_user_id/profile' do
   @user = User.find(params[:id])
+  session_user_id = (session[:user_id]).to_i
+  @session_user = User.find_by(id: session_user_id)
+
   erb :'/user/profile'
 end
 
@@ -21,6 +24,7 @@ post '/user_logging_in' do
       # stores the user id while logged in
 
       redirect '/user/' + session[:current_user_id].to_s + '/profile'
+
     else
       # if wrong password, redirects you to home page
 
