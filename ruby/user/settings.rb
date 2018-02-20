@@ -65,6 +65,6 @@ post '/editing_account' do
   end
 
   # send back to landing
-  redirect '/editing_account'
+  redirect '/'
 
 end

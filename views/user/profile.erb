@@ -27,9 +27,10 @@
     This user doesn't exist
   <% end %>
   
+  <br><br><br>
   <!-- general list of posts -->
   <% if @this_page_user_isreal %>
-    <% @this_page_user.blogs.each do |ea_post| %> 
+    <% @this_page_user.blogs.reverse.each do |ea_post| %> 
         <div class="main__profile__history">
           <form method="POST" action="/user/post/action/<%= ea_post.id %>/">
             <div>
@@ -41,19 +42,23 @@
             <textarea name="main__profile__history__content" maxlength=149><%= ea_post.content %></textarea>
             <br>
             <% if ea_post.user_id == @session_user.id %>
-              <div class="main__profile__history__content_edit">
+              <div class="main__profile__history__content_edit" style="display: inline-block;">
                 Allow edit
               </div>
-              <div class="main__profile__history__content_delete">
+              <div class="main__profile__history__content_delete" style="display: inline-block; margin-left: 5vw;">
                 Start delete
               </div>
-              <input type="submit" value="edit" name="btn_edit">
-              <input type="submit" value="delete" name="btn_delete">
+              <div>
+                <input type="submit" value="edit" name="btn_edit">
+                <input type="submit" value="delete" name="btn_delete" style="display: inline-block; margin-left: 5vw;">
+              </div>
             <% end %>
           </form>
           
         </div>
+    <br><br>
     <% end %>
+
   <% end %>
 
 </div>

@@ -1,21 +1,18 @@
 <h1>Sign Up</h1>
 
-<form ... onsubmit="return checkForm(this);" action='/creating_user' method='post'>
- <input type="text" name="username" placeholder="username">
- <br>
-<input type="password" name="pass1" placeholder="create password">
-<br>
-<input type="password" name="pass2" placeholder="verify password">
-<br>
-<input type="submit">
+<form action='/creating_user' method='post' class="form_create_user">
+  <input type="text" name="username" placeholder="username">
+  <br>
+  <input type="password" name="pass1" placeholder="create password" class="form_create_user__pass1">
+  <br>
+  <input type="password" name="pass2" placeholder="verify password" class="form_create_user__pass2">
+  <br>
+  <div class="form_create_user__submit">
+    Create user
+  </div>
+  <!--  <input type="submit" value="Create user"> -->
+  <div class="form_create_user__error">
+  </div>
 </form>
-<div id="error1"></div>
-<div id="error2"></div>
-<div id="error3"></div>
-<div id="error4"></div>
-<div id="error5"></div>
-<div id="error6"></div>
-<div id="error7"></div>
-<div id="error8"></div>
-<div id="good"></div>
-<script src="/javascript/user/signup.js"></script>
+
+<script src="../javascript/user/signup2.js"></script>

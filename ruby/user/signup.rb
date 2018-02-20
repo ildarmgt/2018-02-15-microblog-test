@@ -5,6 +5,10 @@ end
 
 post '/creating_user' do
 
-  # User.create(username: params[:username], password: params[:pass1], password: params[:pass2])
-  # redirect '/profile'
+  User.create(username: params[:username], password: params[:pass1])
+
+  session[:current_user_id] = User.find_by(username: params[:username]).id
+  @session_user = User.find_by(username: params[:username])
+  
+  redirect '/'
 end

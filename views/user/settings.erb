@@ -1,28 +1,34 @@
 <div class="main-settings">
   <h1>Edit Account</h1>
   
-  <form action="/editing_account" method="POST">
+  <form action="/editing_account" method="POST" class="main-setting-form">
     Username: <%= @session_user.username %><br>
-    <input type="text" name="txt_change_username" placeholder="unchanged"><br>
+    <input type="text" name="txt_change_username" placeholder="unchanged" class="main-setting-name"><br>
     <br>
     Password: <%= @session_user.password.length %> characters<br>
-    <input type="password" name="pass_change_pass" placeholder="unchanged"><br>
-    <input type="password" name="pass_change_pass2" placeholder="repeat"><br>
+    <input type="password" name="pass_change_pass" placeholder="unchanged" class="main-setting-pass1"><br>
+    <input type="password" name="pass_change_pass2" placeholder="repeat" class="main-setting-pass2"><br>
     <br>
 
     <!-- <input type="submit" value="Apply Changes"> -->
     <div class="main-settings-apply">
       Save changes
-    </div>    
+    </div>
+
+    <div class="main-settings-error">
+    </div>
+
+    
+    <a href="/user/delete_confirm/">
+      Delete account
+    </a>
+    
+    
   </form>
   
   <br><br>
 
-  <div class="main-settings-apply">
-    <a href="/user/delete_confirm/">
-      Delete account
-    </a>
-  </div>
+  
 </div>
 
 <!-- import the js script for this page -->
