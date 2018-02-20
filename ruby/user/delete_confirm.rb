@@ -27,12 +27,11 @@ post 'deleting_account' do
 
         # kill session
         session[:current_user_id] = nil
-        
+
         # send to landing
         redirect '/'
       end      
     end
 
     redirect '/'
-
 end
