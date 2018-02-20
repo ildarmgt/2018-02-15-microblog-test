@@ -27,9 +27,10 @@
     This user doesn't exist
   <% end %>
   
+  <br><br><br>
   <!-- general list of posts -->
   <% if @this_page_user_isreal %>
-    <% @this_page_user.blogs.each do |ea_post| %> 
+    <% @this_page_user.blogs.reverse.each do |ea_post| %> 
         <div class="main__profile__history">
           <form method="POST" action="/user/post/action/<%= ea_post.id %>/">
             <div>
@@ -53,7 +54,9 @@
           </form>
           
         </div>
+    <br>
     <% end %>
+
   <% end %>
 
 </div>

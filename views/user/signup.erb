@@ -1,13 +1,18 @@
 <h1>Sign Up</h1>
 
-<form action='/creating_user' method='post'>
+<form action='/creating_user' method='post' class="form_create_user">
   <input type="text" name="username" placeholder="username">
   <br>
-  <input type="password" name="pass1" placeholder="create password">
+  <input type="password" name="pass1" placeholder="create password" class="form_create_user__pass1">
   <br>
-  <input type="password" name="pass2" placeholder="verify password">
+  <input type="password" name="pass2" placeholder="verify password" class="form_create_user__pass2">
   <br>
-  <input type="submit" value="Create user">
+  <div class="form_create_user__submit">
+    Create user
+  </div>
+  <!--  <input type="submit" value="Create user"> -->
+  <div class="form_create_user__error">
+  </div>
 </form>
 
-<!-- <script src="/javascript/user/signup.js"></script> -->
+<script src="../javascript/user/signup2.js"></script>

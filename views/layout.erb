@@ -37,35 +37,40 @@
 
       <% else %>
 
-      <nav>
-        <div class="layout-change_pages">
-          <a href='/'>Home</a>
-        </div>
-        <div class="">
-          <a href='/blogs'>Blogs</a>
-        </div>
-        <div class="">
-          <a href='/people'>People</a>
-        </div>
-      </nav>
+      
+      <div class="layout-change_pages" style="vertical-align: top">
+        <a href='/'>Home</a>
+      </div>
+      <div class="layout-change_pages" style="vertical-align: top">
+        <a href='/blogs'>Blogs</a>
+      </div>
+      <div class="layout-change_pages" style="vertical-align: top">
+        <a href='/people'>People</a>
+      </div>
+      
 
+      <div class="layout-change_pages" style="margin-left: 10vw">
         <form action="/user_logging_in" method="post">
           <input type="text" name="username" placeholder="Username:">
           <input type="password" name="password" placeholder="Password:">
           <input type="submit" value="Log In">
+          <div>
+            <%= @notice %>
+          </div>
+          <div>
+            <%= @notice_wrong %>
+          </div>
         </form>
+        
+      </div>
 
       <% end %>
 
-      <div class="">
-        <%= @notice %>
-      </div>
+      
 
-      <div class="">
-        <%= @notice_wrong %>
-      </div>
+      
     </div>
-
+    <br><br>
     <div class="main">
       <%= yield %>
     </div>
