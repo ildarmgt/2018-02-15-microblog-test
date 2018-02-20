@@ -42,17 +42,19 @@
             </div>
             <textarea name="main__profile__history__content" maxlength=149><%= ea_post.content %></textarea>
             <br>
-            <% if ea_post.user_id == @session_user.id %>
-              <div class="main__profile__history__content_edit" style="display: inline-block; border: 1px black solid;">
-                Allow edit
-              </div>
-              <div class="main__profile__history__content_delete" style="display: inline-block; margin-left: 3vw; border: 1px black solid;">
-                Start delete
-              </div>
-              <div>
-                <input type="submit" value="edit" name="btn_edit">
-                <input type="submit" value="delete" name="btn_delete" style="display: inline-block; margin-left: 6vw;">
-              </div>
+            <% if (!!session[:current_user_id] && !!@session_user) %>
+              <% if ea_post.user_id == @session_user.id %>
+                <div class="main__profile__history__content_edit" style="display: inline-block; border: 1px black solid;">
+                  Allow edit
+                </div>
+                <div class="main__profile__history__content_delete" style="display: inline-block; margin-left: 3vw; border: 1px black solid;">
+                  Start delete
+                </div>
+                <div>
+                  <input type="submit" value="edit" name="btn_edit">
+                  <input type="submit" value="delete" name="btn_delete" style="display: inline-block; margin-left: 6vw;">
+                </div>
+              <% end %>
             <% end %>
           </form>
           
