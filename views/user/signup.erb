@@ -1,11 +1,14 @@
+<div class="page">
+<div class="h1_signup">
 <h1>Sign Up</h1>
+</div>
 
 <form action='/creating_user' method='post' class="form_create_user">
-  <input type="text" name="username" placeholder="username">
+  <input type="text" id="username_signup" name="username" placeholder="username">
   <br>
-  <input type="password" name="pass1" placeholder="create password" class="form_create_user__pass1">
+  <input type="password" id="pass1_signup" name="pass1" placeholder="create password" class="form_create_user__pass1">
   <br>
-  <input type="password" name="pass2" placeholder="verify password" class="form_create_user__pass2">
+  <input type="password" id="pass2_signup" name="pass2" placeholder="verify password" class="form_create_user__pass2">
   <br>
   <div class="form_create_user__submit" style="border: 1px black solid; display: inline-block;">
     Create user
@@ -16,5 +19,6 @@
   </div>
 
 </form>
+</div>
 
 <script src="../javascript/user/signup2.js"></script>
