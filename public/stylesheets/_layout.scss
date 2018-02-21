@@ -1,8 +1,75 @@
+// *{
+//   border: 1px solid red;
+// }
+
+@mixin general_link {
+  position: fixed;
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  user-select: none;
+}
+
 body {
   font-family: MyFont;
   font-size: 1.8vmax;
 }
 
-.layout-change_pages {
+.layout-navbar {
+  position: fixed;
+  text-decoration: none;
+  color: black;
+  user-select: none;
+}
+
+.layout-change_pages a {
+  @include general_link;
+}
+
+#layout-home_button a {
+  text-align: left;
+}
+
+#layout-blogs_button a {
+  left: 7vmax;
+}
+
+#layout-people_button a {
+  left: 13vmax;
+}
+
+.layout-login_info {
+  position: fixed;
+  right: 10px;
+
+}
+
+.layout-login_info input {
+  width: 9vmax;
+  font-size: 1.8vmax;
+  font-family: MyFont;
+  border: none;
+  border-bottom: 0.1vmax solid black;
+  font-size: 1.8vmax;
+  outline-width: 0;
+  text-align: center;
+}
+
+#layout-login_button {
+  border: none;
+  color: white;
+  background-color: black;
+  padding: 0.1vmax 0.5vmax;
+  margin: 0;
   display: inline-block;
+  width: auto;
+  cursor: pointer;
+}
+
+#layout-login_button:active {
+  transform: translateY(0.1vmax);
+}
+
+.layout-notice_wrong_use_pass {
+  text-align: center;
 }
