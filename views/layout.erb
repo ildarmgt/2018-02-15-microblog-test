@@ -7,71 +7,74 @@
   </head>
   <body>
 
-    <div class="">
+    <div class="layout-navbar">
 
       <% if !! @session_user %>
 
-        
-        <div class="layout-change_pages" style="margin: 1vh;">
-          <a href='/'><%= @session_user.username %></a>
-        </div>
-        <div class="layout-change_pages" style="margin: 1vh;">
-          <a href='/blogs'>Blogs</a>
-        </div>
-        <div class="layout-change_pages" style="margin: 1vh;">
-          <a href='/people'>People</a>
-        </div>
-        
-        <div class="layout-settings" style="margin-left: 10vw; display: inline-block;">
-          <form action='/user/settings' method='get' style="display: inline-block;">
-            <input type="submit" value="Settings">
-          </form>
-        </div>
-        
-        <div class="layout-logout" style="display: inline-block;">
-          <form action='/logging_out' method='post' style="display: inline-block;">
+        <div class="layout-logout">
+          <form action='/logging_out' method='post'>
             <input type="submit" value="Logout">
           </form>
         </div>
 
-        
+        <div class="layout-settings">
+          <form action='/user/settings' method='get'>
+            <input type="submit" value="Settings">
+          </form>
+        </div>
+
+        <nav>
+          <div class="layout-change_pages" id="layout-home_button">
+            <a href='/'><%= @session_user.username %></a>
+          </div>
+          <div class="layout-change_pages" id="layout-blogs_button">
+            <a href='/blogs'>Blogs</a>
+          </div>
+          <div class="layout-change_pages" id="layout-people_button">
+            <a href='/people'>People</a>
+          </div>
+        </nav>
 
       <% else %>
 
-      
-      <div class="layout-change_pages" style="vertical-align: top; margin: 1vh;">
-        <a href='/'>Home</a>
-      </div>
-      <div class="layout-change_pages" style="vertical-align: top; margin: 1vh;">
-        <a href='/blogs'>Blogs</a>
-      </div>
-      <div class="layout-change_pages" style="vertical-align: top; margin: 1vh;">
-        <a href='/people'>People</a>
-      </div>
-      
+        <nav>
+          <div class="layout-change_pages" id="layout-home_button">
+            <a href='/'>Home</a>
+          </div>
+          <div class="layout-change_pages" id="layout-blogs_button">
+            <a href='/blogs'>Blogs</a>
+          </div>
+          <div class="layout-change_pages" id="layout-people_button">
+            <a href='/people'>People</a>
+          </div>
+        </nav>
 
-      <div class="layout-change_pages" style="margin-left: 10vw">
-        <form action="/user_logging_in" method="post">
-          <input type="text" name="username" placeholder="Username:">
-          <input type="password" name="password" placeholder="Password:">
-          <input type="submit" value="Log In">
-          <div style="color: green">
-            <%= @notice %>
-          </div>
-          <div style="color: red">
-            <%= @notice_wrong %>
-          </div>
+        <form action="/user_logging_in" method="post" class="layout-login_info">
+          <input type="text" name="username" placeholder="Username">
+          <input type="password" name="password" placeholder="Password">
+          <input type="submit" value="Log In" id="layout-login_button">
         </form>
-        
-      </div>
 
       <% end %>
 
-      
+      <div class="layout-notice_logged_out">
+        <%= @notice %>
+      </div>
 
-      
+      <div class="layout-notice_wrong_use_pass">
+        <%= @notice_wrong %>
+      </div>
     </div>
-    <br><br>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
     <div class="main">
       <%= yield %>
     </div>
