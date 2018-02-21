@@ -6,7 +6,7 @@ var LBL_CREATE_ERROR = document.getElementsByClassName('form_create_user__error'
 
 BTN_CREATE_SUBMIT.addEventListener('click', submit_on_click);
 
-function submit_on_click () {
+function submit_on_click() {
   // check if same
   let isSame = (TXT_CREATE_PASS1.value == TXT_CREATE_PASS2.value);
   if (!isSame) {
@@ -18,13 +18,14 @@ function submit_on_click () {
   }
 
   // check if at least one number
-  let re = /[0-9]/;
+  let isPass;
+  re = /[0-9]/;
   if (!re.test(TXT_CREATE_PASS1.value)) {
-    let isPass = false;
+    isPass = false;
     LBL_CREATE_ERROR.innerHTML = 'Password must contain at least one number (0-9)!';
     TXT_CREATE_PASS1.focus();
   } else {
-    let isPass = true;
+    isPass = true;
   }
 
   // submit form if both tests pass
