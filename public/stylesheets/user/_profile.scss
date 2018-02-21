@@ -1,7 +1,84 @@
 * {
-  // border: 1px solid red;
+  border: 1px solid red;
 }
 
-.main-profile {
+@mixin readable-textarea {
+
+}
+
+@mixin editable-textarea {
+  font-size: 1.5vmax;
+  line-height: 2vmax;
+  outline-width: 0;
+  text-align: justify;
+  border: 0.1vh solid black;
+  margin: 0;
+  // margin-top: 2vh;
+  width: 80%;
+  height: 9vmax;
+  padding: 1vmax;
+}
+
+@mixin editable-textarea-placeholder {
+  text-align: center;
+  line-height: 5vh;
+}
+
+@mixin page-title {
+  font-size: 2vmax;
+  line-height: 2vmax;
+  padding: 1vmax;
+  font-weight: bold;
+  margin-bottom:2vmax;
+}
+
+@mixin post-submit-button {
+  font-size: 1.8vmax;
+  border: none;
+  user-select: none;
+  cursor: pointer;
+  text-align: center;
+  line-height: 2vmax;
+  padding: 0 1vmax;
+  background-color: rgb(41, 49, 49);
+  color: white;
+  outline-width: 0;
+}
+
+@mixin button-press {
+  transform: translateY(0.1vmax);
+}
+
+.main__profile__new__text::-webkit-input-placeholder {
+  @include editable-textarea-placeholder
+}
+
+.main__profile__new__text:-moz-placeholder { /* Firefox 18- */
+  @include editable-textarea-placeholder
+}
+
+.main__profile__new__text::-moz-placeholder {  /* Firefox 19+ */
+  @include editable-textarea-placeholder
+}
+
+.main__profile {
   // background-color: blue;
+  // border: 1px solid blue;
+  text-align: center;
+}
+
+.main__profile__welcome {
+  @include page-title;
+}
+
+.main__profile__new__text {
+  @include editable-textarea;
+}
+
+.main__profile__new__submit {
+  @include post-submit-button;
+}
+
+.main__profile__new__submit:active {
+  @include button-press;
 }

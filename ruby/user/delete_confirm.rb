@@ -2,7 +2,7 @@ get '/user/delete_confirm/' do
   erb :'user/delete_confirm'
 end
 
-post 'deleting_account' do
+post '/deleting_account' do
     # grab id of the user signed in
     if !! session[:current_user_id]
 

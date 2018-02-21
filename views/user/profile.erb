@@ -1,17 +1,18 @@
 <!-- The personal page of the user in the URL -->
 <!-- If logged in, should show controlling options -->
 <div class="main__profile">
+
   <% if @session_user_ishomepage %>
     <!-- this prints if this is home page of logged in user -->
     <div class="main__profile__welcome">
-      Your home page <br><br><br>
+      Welcome home, <%= @session_user.username %>!
     </div>
     <!-- this is the new blog post form -->
     <div class="main__profile__new">
       <form method="POST" action="/posting_blog">
-        <textarea name="main__profile__new__content" placeholder="new blog"></textarea>
+        <textarea name="main__profile__new__content" placeholder="new blog" class="main__profile__new__text" maxlength=149></textarea>
         <br>
-        <input type="submit" value="Post new blog">
+        <input type="submit" value="Post new blog" class="main__profile__new__submit">
       </form>
     </div>
   
