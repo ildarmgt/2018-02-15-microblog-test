@@ -10,6 +10,10 @@
   user-select: none;
 }
 
+.layout-navbar{
+  position: relative;
+}
+
 body {
   font-family: MyFont;
   font-size: 1.8vmax;
@@ -70,6 +74,21 @@ body {
   transform: translateY(0.1vmax);
 }
 
-.layout-notice_wrong_use_pass {
+.layout-notice{
   text-align: center;
+  display: inline-block;
+  margin-top: 7vmin;
+  margin-left: 20vmin;
+}
+
+#layout-wrong {
+  left: 10vmin;
+  font-size: 1.8vmax;
+  color: red;
+}
+
+#layout-logged_out {
+  left: 10vmin;
+  font-size: 1.8vmax;
+  color: green;
 }
