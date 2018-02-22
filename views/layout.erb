@@ -11,16 +11,16 @@
 
       <% if !! @session_user %>
 
-        <div class="layout-logout">
-          <form action='/logging_out' method='post'>
-            <input type="submit" value="Logout">
-          </form>
-        </div>
+        <div class="layout-signed_in_opt">
 
-        <div class="layout-settings">
-          <form action='/user/settings' method='get'>
+          <form action='/user/settings' method='get' class="layout-signed_in_options">
             <input type="submit" value="Settings">
           </form>
+
+          <form action='/logging_out' method='post' class="layout-signed_in_options">
+            <input type="submit" value="Logout">
+          </form>
+
         </div>
 
         <nav>
@@ -57,23 +57,14 @@
 
       <% end %>
 
-      <div class="layout-notice_logged_out">
-        <%= @notice %>
+      <div class="layout-notice">
+        <div id="layout-logged_out"><%= @notice %></div>
+        <div id="layout-wrong"><%= @notice_wrong %></div>
       </div>
 
-      <div class="layout-notice_wrong_use_pass">
-        <%= @notice_wrong %>
-      </div>
     </div>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <div class="layout-spacer"></div>
 
     <div class="main">
       <%= yield %>
