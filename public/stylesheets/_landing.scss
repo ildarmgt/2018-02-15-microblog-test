@@ -1,7 +1,23 @@
-.new_user_button_landing a{
-  position: fixed;
+.landing-new_user_button{
+  text-align: center;
+  font-size: 10vw;
+}
+
+.landing-new_user_button a {
   display: inline-block;
   text-decoration: none;
-  color: black;
   user-select: none;
+  font-size: 10vmin;
+  margin-top: 26vmin;
+  background-color: rgb(50, 171, 31);
+  padding: 0.1vmax 1vmax 0.2vmax;
+  color: white;
+}
+
+#landing-new_user_b:active {
+  transform: translateY(0.1vmax);
+}
+
+#landing-new_user_b {
+  text-align: center;
 }

@@ -3,49 +3,43 @@
 // }
 
 @mixin general_link {
-  position: fixed;
   display: inline-block;
   text-decoration: none;
   color: black;
   user-select: none;
 }
 
-.layout-navbar{
-  position: relative;
-}
-
 body {
   font-family: MyFont;
   font-size: 1.8vmax;
+  margin: 0;
 }
 
 .layout-navbar {
-  position: fixed;
   text-decoration: none;
   color: black;
   user-select: none;
+  position: fixed;
+  display: block;
+  width: 100%;
+  background-color: white;
+}
+
+.layout-change_pages {
+  display: inline-block;
+  margin: 0.5vmax 1vmax;
 }
 
 .layout-change_pages a {
   @include general_link;
 }
 
-#layout-home_button a {
-  text-align: left;
-}
-
-#layout-blogs_button a {
-  left: 7vmax;
-}
-
-#layout-people_button a {
-  left: 13vmax;
-}
-
 .layout-login_info {
-  position: fixed;
-  right: 10px;
-
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 2vmax;
+  width: auto;
 }
 
 .layout-login_info input {
@@ -54,16 +48,16 @@ body {
   font-family: MyFont;
   border: none;
   border-bottom: 0.1vmax solid black;
-  font-size: 1.8vmax;
   outline-width: 0;
   text-align: center;
+  margin: 0.5vmax 1vmax;
 }
 
 #layout-login_button {
   border: none;
   color: white;
   background-color: black;
-  padding: 0.1vmax 0.5vmax;
+  padding: 0.1vmax 0.5vmax 0.2vmax;
   margin: 0;
   display: inline-block;
   width: auto;
@@ -74,21 +68,44 @@ body {
   transform: translateY(0.1vmax);
 }
 
-.layout-notice{
+.layout-notice {
   text-align: center;
-  display: inline-block;
-  margin-top: 7vmin;
-  margin-left: 20vmin;
+  font-size: 1vmax;
 }
 
 #layout-wrong {
-  left: 10vmin;
-  font-size: 1.8vmax;
   color: red;
+  display: inline-block;
 }
 
 #layout-logged_out {
-  left: 10vmin;
-  font-size: 1.8vmax;
   color: green;
+  display: inline-block;
+}
+
+.layout-spacer {
+  height: 6vmax;
+}
+
+.layout-signed_in_opt {
+  position: absolute;
+  top: 0;
+  right: 2vmax;
+  width: auto;
+}
+
+.layout-signed_in_options {
+  display: inline-block;
+  width: auto;
+}
+
+.layout-signed_in_options input {
+  width: 9vmax;
+  font-size: 1.8vmax;
+  font-family: MyFont;
+  border: none;
+  outline-width: 0;
+  text-align: center;
+  margin: 0.5vmax 0.2vmax;
+  cursor: pointer;
 }
