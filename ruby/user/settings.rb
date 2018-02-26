@@ -23,6 +23,7 @@ get '/user/settings' do
 
   # show main page if logged out, show settings page if logged in
   if !! session_user_isloggedin
+    @warning_message = params[:msg] == 1? "This username is taken" : " ";
     erb :'user/settings'
   else    
     redirect '/'
@@ -58,8 +59,18 @@ post '/editing_account' do
 
   # if values are non-empty, write those values to the database
   if !from_txt_change_username.blank?
-    @session_user.update_attribute(:username, from_txt_change_username)
+    if (!! User.find_by(username: params[:username]))
+      # check if account exists, if so
+      # need to refresh page and warn user 
+      redirect '/user/settings?msg=1'
+    else
+      # if account name is unique, create
+      @session_user.update_attribute(:username, from_txt_change_username)
+    end
+
   end
+
+
   if !from_pass_change_pass.blank?
     @session_user.update_attribute(:password, from_pass_change_pass)
   end

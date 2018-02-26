@@ -1,4 +1,5 @@
 public/.sass-cache/
+.sass-cache/
 public/css/
 Gemfile.lock
 main.sqlite3

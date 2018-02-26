@@ -1,0 +1,96 @@
+.layout-signed_in_options input, .layout-signed_in_options {
+  background: none;
+}
+
+.layout-signed_in_options:active {
+  @include button-press;
+}
+
+.layout-change_pages a:active {
+  @include button-press;
+}
+
+.layout-navbar {
+  z-index: 1000;
+}
+
+.landing-new_user_button a:active {
+  @include button-press;
+}
+
+.form_create_user__submit {
+  @include post-submit-button;
+}
+
+.form_create_user input {
+  @include regular_textfield;
+}
+
+// temp **********
+
+.main-settings {
+  text-align: center;
+  
+}
+
+.main-setting-form {
+  text-align: center;
+  display: inline-block;
+  width: 50%;
+
+}
+
+.main-setting-form input {
+  display: inline-block;
+
+}
+
+.main-setting-name {
+  @include regular_textfield;
+  font-size: 1.5vmax;
+}
+
+.main-setting-pass1, .main-setting-pass2 {
+  @include regular_textfield;
+  font-size: 1.5vmax;
+}
+
+.main__settings__title {
+  @include page-title;
+}
+
+.main__settings__text {
+  @include regular_text;
+  font-size: 1.5vmax;
+}
+
+.main-settings-apply {
+  @include post-submit-button;
+  margin: 1vmax;
+}
+
+.main-settings-apply:active {
+  @include button-press;
+}
+
+.main__settings__title__btnDelete {
+  @include post-submit-button;
+  background-color: red;
+  margin: 2vmax;
+}
+
+.main__settings__title__btnDelete:active {
+  @include button-press;
+}
+
+
+.main__settings__text__spacer_big {
+  display: block;
+  height: 3vmax;
+}
+
+.main__settings__text__spacer_small {
+  display: block;
+  height: 0.5vmax;
+}
+

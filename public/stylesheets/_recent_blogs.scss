@@ -1,0 +1,7 @@
+.blogs {
+  text-align: center;
+}
+
+.blogs-title {
+  @include page-title;
+}

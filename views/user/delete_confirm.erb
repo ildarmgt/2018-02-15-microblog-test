@@ -1,10 +1,13 @@
-<div class="main-delete">
-  <h1>Are you sure you want to delete your account?</h1>
-  <br>
-
+<div class="main-settings">
+  <div class="main__settings__title">
+    Are you sure you want to delete your account?
+  </div>
+  <div class="main__settings__text__spacer_small"></div>  
+  <%= @session_user.username %>
+  <div class="main__settings__text__spacer_small"></div>
   <form action="/deleting_account" method="POST">
-    <input type="submit" value="Delete" name="main__delete_confirm">
-    <input type="submit" value="Do NOT delete" name="main__delete_cancel">
+    <input type="submit" value="Delete" name="main__delete_confirm" class="main__settings__title__btnDelete">
+    <input type="submit" value="Do NOT delete" name="main__delete_cancel" class="main-settings-apply">
   </form>
 
 </div>
