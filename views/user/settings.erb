@@ -1,14 +1,26 @@
 <div class="main-settings">
-  <h1>Edit Account</h1>
+  <div class="main__settings__title">Edit Account</div>
   
   <form action="/editing_account" method="POST" class="main-setting-form">
-    Username: <%= @session_user.username %><br>
-    <input type="text" name="txt_change_username" placeholder="unchanged" class="main-setting-name"><br>
-    <br>
-    Password: <%= @session_user.password.length %> characters<br>
-    <input type="password" name="pass_change_pass" placeholder="unchanged" class="main-setting-pass1"><br>
-    <input type="password" name="pass_change_pass2" placeholder="repeat" class="main-setting-pass2"><br>
-    <br>
+    <div class="main__settings__text">
+      Username:
+    </div>
+    <div class="main__settings__text__spacer_small"></div>
+    <input type="text" name="txt_change_username" placeholder="<%= @session_user.username %>" class="main-setting-name">
+    <div class="main__settings__text__spacer_big"></div>
+    <div class="main__settings__text">
+      Password: <%= @session_user.password.length %> 
+      <% if @session_user.password.length == 1 %>
+        character
+      <% else %>
+        characters
+      <% end %>
+    </div>
+    <div class="main__settings__text__spacer_small"></div>
+    <input type="password" name="pass_change_pass" placeholder="change password" class="main-setting-pass1">
+    <div class="main__settings__text__spacer_small"></div>
+    <input type="password" name="pass_change_pass2" placeholder="verify password" class="main-setting-pass2">
+    <div class="main__settings__text__spacer_big"></div>
 
     <!-- <input type="submit" value="Apply Changes"> -->
     <div class="main-settings-apply">
@@ -16,17 +28,17 @@
     </div>
 
     <div class="main-settings-error">
+      <!-- nothing at first -->
+      <%= @warning_message %>
     </div>
-
     
     <a href="/user/delete_confirm/">
-      Delete account
-    </a>
-    
+      <div class="main__settings__title__btnDelete">
+        Delete account
+      </div>
+    </a>    
     
   </form>
-  
-  <br><br>
 
   
 </div>
